@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Match Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>✨ Memory Match</h1>
+      <p>Can you match all the cards?</p>
+    </header>
+
+    <div class="controls">
+      <button id="start-btn" class="button primary">Start Game</button>
+      <button id="restart-btn" class="button secondary hidden">Restart</button>
+      <div id="difficulty-controls" class="hidden">
+        <label for="difficulty" class="label">Select Difficulty:</label>
+        <select id="difficulty" class="dropdown">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <div class="status-item">
+        <p>⏱ Time: <span id="timer">0:00</span></p>
+      </div>
+      <div class="status-item">
+        <p>🔄 Moves: <span id="moves">0</span></p>
+      </div>
+    </div>
+
+    <div id="game-board" class="board"></div>
+
+    <div id="win-popup" class="hidden win-popup">
+      <h2>🎉 You Won!</h2>
+      <p>You completed the game in <span id="final-time"></span> with <span id="final-moves"></span> moves.</p>
+      <button id="play-again-btn" class="button primary">Play Again</button>
+    </div>
+  </div>
+
+  <audio id="flip-sound" src="flip.mp3"></audio>
+  <audio id="match-sound" src="match.mp3"></audio>
+  <audio id="mismatch-sound" src="mismatch.mp3"></audio>
+  <audio id="win-sound" src="win.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
